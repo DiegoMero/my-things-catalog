@@ -16,10 +16,10 @@ require './app'
 
 def main
   app = App.new
+  app.load_data
   loop do
     puts @list_options
     option_selected = gets.chomp
-    exit if option_selected == '12'
     case option_selected
     when '1'
       app.books_list
@@ -27,8 +27,11 @@ def main
       app.labels_list
     when '8'
       app.add_book
-    else
+    when '12'
+      app.save_data
       exit
+    else
+      puts 'Bola'
     end
   end
 end

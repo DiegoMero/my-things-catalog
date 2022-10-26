@@ -1,6 +1,7 @@
 require 'securerandom'
 require_relative './item'
 require './book'
+require 'json'
 
 class Label
   attr_accessor :title, :color, :items
@@ -17,3 +18,8 @@ class Label
     item.label = self
   end
 end
+
+# ruby = [0, 's', :foo]
+# json = JSON.generate(ruby)
+
+# File.write('data/books.json', json)
