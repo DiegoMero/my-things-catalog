@@ -1,5 +1,6 @@
 require 'securerandom'
 require_relative './item'
+require './book'
 
 class Label
   attr_accessor :title, :color, :items
