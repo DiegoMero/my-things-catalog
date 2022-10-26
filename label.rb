@@ -1,7 +1,9 @@
 require 'securerandom'
-require './item'
+require_relative './item'
 
 class Label
+  attr_accessor :title, :color, :items
+
   def initialize(title, color)
     @id = SecureRandom.random_number(1..100)
     @title = title

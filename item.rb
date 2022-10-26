@@ -10,19 +10,9 @@ class Item
     @archived = archived
   end
 
-  def genre(genre)
-    @genre = genre
-  end
+  attr_writer :genre, :author, :source
 
-  def author(author)
-    @author = author
-  end
-
-  def source(source)
-    @source = source
-  end
-
-  def label(label)
+  def label=(label)
     @label = label
     label.items.push(self) unless label.items.include?(self)
   end
