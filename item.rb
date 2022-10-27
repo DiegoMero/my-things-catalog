@@ -10,11 +10,16 @@ class Item
     @archived = archived
   end
 
-  attr_writer :genre, :author, :source
+  attr_writer :genre, :source
 
   def label=(label)
     @label = label
     label.items.push(self) unless label.items.include?(self)
+  end
+
+  def author=(author)
+    @author = author
+    author.items.push(self) unless author.items.include?(self)
   end
 
   def can_be_archived?
